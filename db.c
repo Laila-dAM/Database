@@ -72,5 +72,8 @@ void updateUser(FILE *file, int id, const struct User *newUser) {
 
     fclose(file);
     fclose(temp);
+
+    remove("users.txt");
+    rename("temp.txt","users.txt");
 }
 
