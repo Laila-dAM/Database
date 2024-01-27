@@ -105,5 +105,13 @@ void deleteUser(FILE *file, int id){
 
     remove("users.txt");
     rename("temp.txt", "users.txt");
+
+    if(delete) {
+        printf("User deleted succefully!\n\n");
+    }
+    else {
+        printf("User with ID %d not found.\n\n", id);
+    }
 }
+
 
