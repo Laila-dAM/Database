@@ -87,5 +87,17 @@ void deleteUser(FILE *file, int id){
         perror("Error creating temporary file");
         exit(EXIT_FAILURE);
     }
+
+    struct User user;
+    int delete = 0;
+    while (fscanf(file, "%d, %49[^,], %d\n", &user.id, user.name, &user.age) == 3){
+        if (user.id == id){
+            delete = 1;
+        }
+        else {
+            fprintf(temp, "%d, %s, %d\n", user.id, user.name, user.age);
+            
+        }
+    }
 }
 
