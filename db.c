@@ -114,4 +114,10 @@ void deleteUser(FILE *file, int id){
     }
 }
 
+int main(){
+    setlocale(LC_ALL,"en_US");
+
+    FILE *file = fopen("users.txt","a+");
+}
+
 
