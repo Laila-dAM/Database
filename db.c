@@ -29,3 +29,18 @@ void listUsers(FILE *file) {
     printf("\n");
 }
 
+void findUser(FILE *file, int id) {
+    rewind(file);
+
+    struct User user:
+    int found = 0;
+    while (fscanf(file, "%d, %49[^,], %d\n", &user.id, user.name, &user.age) == 3){
+        if (user.id == id){
+            printf("User found:\n");
+            printf("ID: %d, Name: %s, Age: %d\n\n", user.id, user.name, user.age);
+            found = 1;
+            break;
+        }
+    }
+}
+
