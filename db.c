@@ -186,9 +186,11 @@ int main(){
            
             default:
                 printf("Invalid option. Please try again.\n");
-        
         }
     }
+    while (choice !=0);
+    fclose(file);
+    return 0;
 }
 
 
