@@ -135,6 +135,59 @@ int main(){
 
         printf("Choose an option:");
         scanf("%d", &choice);
+
+        struct User user;
+        int id;
+
+        switch (choice) {
+
+            case 1:
+            printf("Enter user ID:");
+            scanf("%d", &user.id);
+            printf("Enter user name:");
+            scanf("%s", user.name);
+            printf("Enter user age:");
+            scanf("%d", &user.age);
+            addUser(file, &user);
+            break;
+
+            case 2:
+                listUsers(file);
+                break;
+            
+            case 3:
+                printf("Enter user ID to find: ");
+                scanf("%d", &id);
+                findUser(file, id);
+                break;
+           
+            case 4:
+                printf("Enter user ID to update: ");
+                scanf("%d", &id);
+                printf("Enter new user ID: ");
+                scanf("%d", &user.id);
+                printf("Enter new user name: ");
+                scanf("%s", user.name);
+                printf("Enter new user age: ");
+                scanf("%d", &user.age);
+
+                updateUser(file, id, &user);
+                break;
+           
+            case 5:
+                printf("Enter user ID to delete: ");
+                scanf("%d", &id);
+                deleteUser(file, id);
+                break;
+         
+            case 0:
+                printf("Exiting program.\n");
+                break;
+           
+            default:
+                printf("Invalid option. Please try again.\n");
+        
+        }
     }
 }
 
