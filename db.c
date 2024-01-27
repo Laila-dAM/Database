@@ -57,5 +57,17 @@ void updateUser(FILE *file, int id, const struct User *newUser) {
         perror("Error creating temporary file");
         exit(EXIT_FAILURE);
     }
+
+    struct User user;
+    while (fscanf(file, "%d, %49[^,], %d\n", &user.id, user.name, &user.age) == 3) {
+        if (user.id == id) {
+            fprintf(temp, "%d, %s, %d\n", newUser->id, newUser->name, newUser->age);
+
+        }
+
+        else {
+            fprintf(temp, "%d, %s, %d\n", user.id, user.name, user.age);
+        }
+    }
 }
 
