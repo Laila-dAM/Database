@@ -96,8 +96,14 @@ void deleteUser(FILE *file, int id){
         }
         else {
             fprintf(temp, "%d, %s, %d\n", user.id, user.name, user.age);
-            
+
         }
     }
+
+    fclose(file);
+    fclose(temp);
+
+    remove("users.txt");
+    rename("temp.txt", "users.txt");
 }
 
