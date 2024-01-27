@@ -13,3 +13,8 @@ struct User
     int age;
 };
 
+void addUser(FILE *file, const struct User *user) {
+    printf(file, "%d, %s, %d\n", user->id, user->name, user->age);
+    
+}
+
