@@ -42,5 +42,10 @@ void findUser(FILE *file, int id) {
             break;
         }
     }
+
+    if (!found) {
+        printf("User with ID %d not found.\n\n", id);
+
+    }
 }
 
