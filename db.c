@@ -123,6 +123,19 @@ int main(){
         perror("Error opening users file");
         return EXIT_FAILURE;
     }
+
+    int choice;
+    do {
+        printf("1. Add User\n");
+        printf("2. List Users\n");
+        printf("3. Find User by ID\n");
+        printf("4. Update User by ID\n");
+        printf("5. Delete User by ID\n");
+        printf("0. Exit\n");
+
+        printf("Choose an option:");
+        scanf("%d", &choice);
+    }
 }
 
 
