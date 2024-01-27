@@ -118,6 +118,11 @@ int main(){
     setlocale(LC_ALL,"en_US");
 
     FILE *file = fopen("users.txt","a+");
+
+    if(file == NULL){
+        perror("Error opening users file");
+        return EXIT_FAILURE;
+    }
 }
 
 
