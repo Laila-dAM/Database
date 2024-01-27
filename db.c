@@ -49,3 +49,13 @@ void findUser(FILE *file, int id) {
     }
 }
 
+void updateUser(FILE *file, int id, const struct User *newUser) {
+    rewind(file);
+
+    FILE *temp = fopen("temp.txt", "a+");
+    if (temp == NULL) {
+        perror("Error creating temporary file");
+        exit(EXIT_FAILURE);
+    }
+}
+
