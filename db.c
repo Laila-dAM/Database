@@ -69,5 +69,8 @@ void updateUser(FILE *file, int id, const struct User *newUser) {
             fprintf(temp, "%d, %s, %d\n", user.id, user.name, user.age);
         }
     }
+
+    fclose(file);
+    fclose(temp);
 }
 
